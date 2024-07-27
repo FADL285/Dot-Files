@@ -1,0 +1,113 @@
+# oh-my-posh theme
+eval "$(oh-my-posh init bash --config '/c/Users/FadlM/customization/oh-my-posh/themes/custom_kali.omp.json')"
+
+# Auto Completion Scripts
+if [ -f /usr/share/git/git-completion.bash ]; then
+    . /usr/share/git/git-completion.bash
+fi
+
+if [ -f /usr/share/git/git-prompt.sh ]; then
+    . /usr/share/git/git-prompt.sh
+fi
+
+# ====== aliases ======
+alias vim='nvim'
+
+# Alias to reload .bashrc
+alias reloadBash='source ~/.bashrc'
+
+# Navigation aliases
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias ~='cd ~'
+
+# Directory listing aliases
+alias ll='ls -lah'
+alias la='ls -A'
+alias l='ls -CF'
+
+# Directory creation and navigation
+alias mkcd='foo(){ mkdir -p "$1"; cd "$1"; }; foo'
+alias c='clear'
+
+# Searching
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+
+# Shortcuts
+alias h='history'
+alias j='jobs -l'
+
+# System update and upgrade (for Debian/Ubuntu)
+alias update='sudo apt update && sudo apt upgrade'
+alias updatey='sudo apt update && sudo apt upgrade -y'
+
+# Networking
+alias ipinfo='curl http://ipinfo.io; echo'
+alias getip='curl http://ifconfig.me; echo'
+
+# git
+alias g='git'
+alias clone='git clone'
+alias gin='git init'
+alias gst='git status'
+alias gco='git checkout'
+alias gbr='git branch'
+alias gcm='git commit'
+alias gdf='git diff'
+alias glg='git log --oneline --graph --decorate --all'
+alias gls='git log --stat'
+alias glast='git log -1 HEAD'
+alias gunstage='git reset HEAD --'
+alias guncommit='git reset --soft HEAD^'
+alias gamend='git commit --amend'
+alias galiases='git config --get-regexp "^alias\."'
+alias gpl='git pull'
+alias gpsh='git push'
+
+# Node.js and npm aliases
+alias ninit='npm init'
+alias ni='npm install'
+alias nin='npm install'
+alias ns='npm start'
+alias nt='npm test'
+alias nb='npm run build'
+alias nl='npm link'
+alias nls='npm list'
+alias nlsg='npm list -g --depth=0'
+alias nr='npm run'
+alias npub='npm publish'
+alias nun='npm uninstall'
+alias nup='npm update'
+alias nid='npm install --save-dev'
+alias nig='npm install -g'
+alias nis='npm install --save'
+alias nrd='npm run dev'
+
+# Docker shortcuts
+alias dps='docker ps'
+alias di='docker images'
+alias dstart='docker start'
+alias dstop='docker stop'
+alias drm='docker rm'
+alias drmi='docker rmi'
+alias dexec='docker exec -it'
+
+# ///// CyberDefenders Project Aliases \\\\\
+
+# Alias to activate Python virtual environment
+alias activateVenv='source venv/Scripts/activate'
+# Alias for python manage.py
+alias managePy='python manage.py'
+# Alias to run the Django server
+alias runServer='python manage.py runserver'
+# Alias to install dependencies
+alias installPyDeps='pip install -r requirements.txt'
+
+# Function to activate virual environment and run Django server
+function cydefBoot {
+  activateVenv
+  runServer
+}
